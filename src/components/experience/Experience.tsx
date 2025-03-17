@@ -13,118 +13,112 @@ import MedicationIcon from '@mui/icons-material/Medication';
 import { useEffect, useRef, useState } from 'react';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import SkillSection from '../skillsection/SkillSection';
+import { experience } from '../../data/Experience';
 
-const items = [
-  {
-    icon: <CloudIcon />,
-    title: 'Digital Monitoring Product (DMP)',
-    description: 'Enterprise Software Engineer (January 8, 2024- Present)',
-    imageLight: `url("${
-      process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
-    }/static/images/templates/templates-images/mobile-light.png")`,
-    imageDark: `url("${
-      process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
-    }/static/images/templates/templates-images/dash-dark.png")`,
-    details: `–Working in a large Java Based Application named Entre widely used in federal and state organizations for communication with their panels for maintaining security.
+const items=experience;
+// const items = [
+//   {
+//     icon: <CloudIcon />,
+//     title: 'Digital Monitoring Product (DMP)',
+//     description: 'Enterprise Software Engineer (January 8, 2024- Present)',
+//     imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
+//       }/static/images/templates/templates-images/mobile-light.png")`,
+//     imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
+//       }/static/images/templates/templates-images/dash-dark.png")`,
+//     details: `–Working in a large Java Based Application named Entre widely used in federal and state organizations for communication with their panels for maintaining security.
 
-–Working in a large Java Based Automation Application named SCS-VR widely used in banks to communicate with central stations to take necessary steps during fire and burglary alarms.
+// –Working in a large Java Based Automation Application named SCS-VR widely used in banks to communicate with central stations to take necessary steps during fire and burglary alarms.
 
-–Working with different banks and financial institutions like Bank of America, Capital One, Arvest Bank, and JPMorgan Chase & Co to enhance their security with more than 6000 panels.
+// –Working with different banks and financial institutions like Bank of America, Capital One, Arvest Bank, and JPMorgan Chase & Co to enhance their security with more than 6000 panels.
 
-–Designs, writes, maintains, tests, and debugs software that is modular, maintainable, and easy to understand.
-`,
-  },
-  // {
-  //   icon: <EdgesensorHighRoundedIcon />,
-  //   title: 'Unmanned Aerial Vehicle (UAV)',
-  //   description:
-  //     'This item could provide information about the mobile app version of the product.',
-  //   imageLight: `url("${dronfly}")`,
-  //   imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/mobile-dark.png")`,
-  // },
-  {
-    icon: <MedicationIcon />,
-    title: 'Girmairi',
-    description: 'Software Engineer (September 1, 2021- Present)',
-    imageLight: `url("${
-      process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
-    }/static/images/templates/templates-images/mobile-light.png")`,
-    imageDark: `url("${
-      process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
-    }/static/images/templates/templates-images/mobile-dark.png")`,
-    details: `–Led the development team of 10+ members, providing guidance and direction to deliver most of the products successfully before the deadline.
+// –Designs, writes, maintains, tests, and debugs software that is modular, maintainable, and easy to understand.
+// `,
+//   },
+//   // {
+//   //   icon: <EdgesensorHighRoundedIcon />,
+//   //   title: 'Unmanned Aerial Vehicle (UAV)',
+//   //   description:
+//   //     'This item could provide information about the mobile app version of the product.',
+//   //   imageLight: `url("${dronfly}")`,
+//   //   imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/mobile-dark.png")`,
+//   // },
+//   {
+//     icon: <MedicationIcon />,
+//     title: 'Girmairi',
+//     description: 'Software Engineer (September 1, 2021- Present)',
+//     imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
+//       }/static/images/templates/templates-images/mobile-light.png")`,
+//     imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
+//       }/static/images/templates/templates-images/mobile-dark.png")`,
+//     details: `–Led the development team of 10+ members, providing guidance and direction to deliver most of the products successfully before the deadline.
 
-    –Working as a seasoned full-stack developer by the company to architect and develop cutting-edge software solutions for web and mobile applications with Java, Javascript, and React Native.
+//     –Working as a seasoned full-stack developer by the company to architect and develop cutting-edge software solutions for web and mobile applications with Java, Javascript, and React Native.
 
-    –Spearheaded the design and implementation of an AWS streamlined DevOps operation(Codepipeline, Codebuild, Codedeploy, Lambda, ECS, EC2, S3, IAM, RDS), deployed mobile application in google playstore and appstore, enhancing automation for the entire development team and increasing work efficiency by 70%.
+//     –Spearheaded the design and implementation of an AWS streamlined DevOps operation(Codepipeline, Codebuild, Codedeploy, Lambda, ECS, EC2, S3, IAM, RDS), deployed mobile application in google playstore and appstore, enhancing automation for the entire development team and increasing work efficiency by 70%.
     
-    –Enhanced product quality by 85% with employing Google Analytics, Google ReCAPTCHA, CHATGPT, ZOHO and advanced SEO strategies.`,
-  },
-  {
-    icon: <SecurityIcon />,
-    title: 'Missouri State University',
-    description: 'Graduate Assistant (January 17, 2022 - December 15, 2023)',
-    imageLight: `url("${
-      process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
-    }/static/images/templates/templates-images/devices-light.png")`,
-    imageDark: `url("${
-      process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
-    }/static/images/templates/templates-images/devices-dark.png")`,
-    details: `
-    –Courses Taught: Introduction to C++ Programming, Data Structure, Computational Thinking, Operating Systems.
+//     –Enhanced product quality by 85% with employing Google Analytics, Google ReCAPTCHA, CHATGPT, ZOHO and advanced SEO strategies.`,
+//   },
+//   {
+//     icon: <SecurityIcon />,
+//     title: 'Missouri State University',
+//     description: 'Graduate Assistant (January 17, 2022 - December 15, 2023)',
+//     imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
+//       }/static/images/templates/templates-images/devices-light.png")`,
+//     imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
+//       }/static/images/templates/templates-images/devices-dark.png")`,
+//     details: `
+//     –Courses Taught: Introduction to C++ Programming, Data Structure, Computational Thinking, Operating Systems.
 
-    –Demonstrated expertise by consistently evaluating examination papers, facilitating laboratory sessions, assessing projects and orchestrating weekly programming workshops.
+//     –Demonstrated expertise by consistently evaluating examination papers, facilitating laboratory sessions, assessing projects and orchestrating weekly programming workshops.
 
-    –Orchestrated the mentor-ship of four senior student groups, providing invaluable assistance in project planning, database design, and delivering constructive feedback for empowering students to achieve outstanding project outcomes and receive accolades from industry professionals.
+//     –Orchestrated the mentor-ship of four senior student groups, providing invaluable assistance in project planning, database design, and delivering constructive feedback for empowering students to achieve outstanding project outcomes and receive accolades from industry professionals.
 
-–Led the ROSE Grant 2023 program, enlightening ten high school teachers about the security vulnerabilities linked to IoT devices.
-`,
-  },
-  // {
-  //   icon: <SchoolIcon />,
-  //   title: 'K-12 Education Learning',
-  //   description:
-  //     'This item could provide a snapshot of the most important metrics or data points related to the product.',
-  //   imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/dash-light.png")`,
-  //   imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/dash-dark.png")`,
-  // },
-  {
-    icon: <DevicesRoundedIcon />,
-    title: 'Global Brand Pvt Ltd',
-    description:
-      'Contractual Mobile App Developer (June 1, 2021 - September 1, 2021)',
-    imageLight: `url("${
-      process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
-    }/static/images/templates/templates-images/devices-light.png")`,
-    imageDark: `url("${
-      process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
-    }/static/images/templates/templates-images/devices-dark.png")`,
-    details: `–Organized the development of the company's mobile application with react-native, ensuring its 100% successful implementation and functionality in both iOS and android.
+// –Led the ROSE Grant 2023 program, enlightening ten high school teachers about the security vulnerabilities linked to IoT devices.
+// `,
+//   },
+//   // {
+//   //   icon: <SchoolIcon />,
+//   //   title: 'K-12 Education Learning',
+//   //   description:
+//   //     'This item could provide a snapshot of the most important metrics or data points related to the product.',
+//   //   imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/dash-light.png")`,
+//   //   imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/dash-dark.png")`,
+//   // },
+//   {
+//     icon: <DevicesRoundedIcon />,
+//     title: 'Global Brand Pvt Ltd',
+//     description:
+//       'Contractual Mobile App Developer (June 1, 2021 - September 1, 2021)',
+//     imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
+//       }/static/images/templates/templates-images/devices-light.png")`,
+//     imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
+//       }/static/images/templates/templates-images/devices-dark.png")`,
+//     details: `–Organized the development of the company's mobile application with react-native, ensuring its 100% successful implementation and functionality in both iOS and android.
 
-    –Developed and launched the company's one of the most comprehensive mobile applications for ecommerce, focusing on computer accessories, showcasing technical expertise and innovation.
+//     –Developed and launched the company's one of the most comprehensive mobile applications for ecommerce, focusing on computer accessories, showcasing technical expertise and innovation.
 
-    –Successfully orchestrated the application's launch on both Google Play Store and iOS App Store, ensuring 100% smooth rollout process.`,
-  },
-  //,
+//     –Successfully orchestrated the application's launch on both Google Play Store and iOS App Store, ensuring 100% smooth rollout process.`,
+//   },
+//   //,
 
-  // {
-  //   icon: <DevicesRoundedIcon />,
-  //   title: 'BigGO Limited',
-  //   description:
-  //     'Full Stack Developer (June 1, 2021 - 1 September 1, 2021)',
-  //   imageLight: `url("${
-  //     process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
-  //   }/static/images/templates/templates-images/devices-light.png")`,
-  //   imageDark: `url("${
-  //     process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
-  //   }/static/images/templates/templates-images/devices-dark.png")`,
-  //   details: `–Organized the development of the company's mobile application with react-native, ensuring its 100% successful implementation and functionality in both iOS and android.
+//   // {
+//   //   icon: <DevicesRoundedIcon />,
+//   //   title: 'BigGO Limited',
+//   //   description:
+//   //     'Full Stack Developer (June 1, 2021 - 1 September 1, 2021)',
+//   //   imageLight: `url("${
+//   //     process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
+//   //   }/static/images/templates/templates-images/devices-light.png")`,
+//   //   imageDark: `url("${
+//   //     process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'
+//   //   }/static/images/templates/templates-images/devices-dark.png")`,
+//   //   details: `–Organized the development of the company's mobile application with react-native, ensuring its 100% successful implementation and functionality in both iOS and android.
 
-  //   –Developed and launched the company's one of the most comprehensive mobile applications for ecommerce, focusing on computer accessories, showcasing technical expertise and innovation.
+//   //   –Developed and launched the company's one of the most comprehensive mobile applications for ecommerce, focusing on computer accessories, showcasing technical expertise and innovation.
 
-  //   –Successfully orchestrated the application's launch on both Google Play Store and iOS App Store, ensuring 100% smooth rollout process.`
-  // },
-];
+//   //   –Successfully orchestrated the application's launch on both Google Play Store and iOS App Store, ensuring 100% smooth rollout process.`
+//   // },
+// ];
 
 interface ChipProps {
   selected?: boolean;
@@ -239,14 +233,16 @@ export function MobileLayout({
             justifyContent: 'flex-start',
           })}
         >
-          <Typography variant='h4' style={{textAlign:"center",                    fontFamily: 'Tinos',
- width:'100%'}}>Highlights</Typography>
+          <Typography variant='h4' style={{
+            textAlign: "center", fontFamily: 'Tinos',
+            width: '100%'
+          }}>Highlights</Typography>
           <Typography
             variant='body2'
             sx={{
               textAlign: 'justify',
               whiteSpace: 'pre-line',
-              width: '100%',                    fontFamily: 'Tinos',
+              width: '100%', fontFamily: 'Tinos',
 
             }}
           >
@@ -256,13 +252,16 @@ export function MobileLayout({
         <Box sx={{ px: 2, pb: 2 }}>
           <Typography
             gutterBottom
-            sx={{ color: 'text.primary', fontWeight: 'medium' ,                    fontFamily: 'Tinos',
+            sx={{
+              color: 'text.primary', fontWeight: 'medium', fontFamily: 'Tinos',
             }}
           >
             {selectedFeature.title}
           </Typography>
-          <Typography variant='body2' sx={{ color: 'text.secondary',                     fontFamily: 'Tinos',
-mb: 1.5 }}>
+          <Typography variant='body2' sx={{
+            color: 'text.secondary', fontFamily: 'Tinos',
+            mb: 1.5
+          }}>
             {selectedFeature.description}
           </Typography>
         </Box>
@@ -347,7 +346,7 @@ export default function Experience() {
           color='primary'
           variant='outlined'
           onClick={openResume}
-          style={{ textTransform: 'none', fontFamily: 'Comic Nueue', fontSize:16 }}
+          style={{ textTransform: 'none', fontFamily: 'Comic Nueue', fontSize: 16 }}
         >
           View Full CV{' '} <InfoOutlinedIcon />
         </Button>
@@ -358,15 +357,16 @@ export default function Experience() {
           component='h2'
           variant='h4'
           gutterBottom
-          sx={{ color: 'text.primary',                    fontFamily: 'Tinos',          }}
+          sx={{ color: 'text.primary', fontFamily: 'Tinos', }}
         >
           Professional Experience
         </Typography>
         <Typography
           variant='body1'
           style={{ textAlign: 'justify' }}
-          sx={{ color: 'text.secondary', mb: { xs: 2, sm: 4 } ,                    fontFamily: 'Tinos',
-        }}
+          sx={{
+            color: 'text.secondary', mb: { xs: 2, sm: 4 }, fontFamily: 'Tinos',
+          }}
         >
           Experienced Software Engineer with a track record of delivering
           cutting-edge web and mobile applications to prestigious clients over
@@ -434,10 +434,12 @@ export default function Experience() {
                 >
                   {/* {icon} */}
 
-                  <Typography variant='h6' sx={{                    fontFamily: 'Tinos',
-}}>{title}</Typography>
-                  <Typography variant='body2' sx={{                    fontFamily: 'Tinos',
-}}>{description}</Typography>
+                  <Typography variant='h6' sx={{
+                    fontFamily: 'Tinos',
+                  }}>{title}</Typography>
+                  <Typography variant='body2' sx={{
+                    fontFamily: 'Tinos',
+                  }}>{description}</Typography>
                 </Box>
               </Box>
             ))}
@@ -480,7 +482,8 @@ export default function Experience() {
             >
               <Typography
                 variant='h4'
-                style={{ textAlign: 'center', width: '100%' ,                    fontFamily: 'Tinos',
+                style={{
+                  textAlign: 'center', width: '100%', fontFamily: 'Tinos',
                 }}
               >
                 Highlights
@@ -502,7 +505,7 @@ export default function Experience() {
           </Card>
         </Box>
       </Box>
-      <SkillSection/>
+      <SkillSection />
     </Container>
   );
 }

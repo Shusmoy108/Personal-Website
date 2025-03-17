@@ -11,135 +11,136 @@ import InputAdornment from '@mui/material/InputAdornment';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded';
+import { automationProjects, backendProjects, boilerplateProjects, devopsProjects, frontendProjects, mobileProjects, researchProjects, webProjects } from '../../data/Projects';
 
-const projects = [
-  {
-    title: 'Evolutionary DC Selection Policy',
-    description: `Designed novel Machine Learning based data center(DC) selection policies
-in cloud-environment with Java which can outperform the existing DC selection policies and reduce the
-response time and data-processing time by 70% compared to the existing selection policies.`,
-    subheader: 'Research',
-  },
-  {
-    title: 'Movie Recommendation System with Clustering Algorithm',
-    description: `Built a movie recommendation system using
-  Apache Spark and the MovieLens dataset, employing clustering algorithms like K-Means, GMM, and LDA to
-  suggest users approximately 80% similar movies based on users viewing history.`,
-    subheader: 'Research',
-  },
-  {
-    title: 'Content Suggestion with Topic Modeling',
-    description: `Created a web-application with Python where user will be engaged
-to read blogs and continuously get suggestion based on the blogs user is reading using BERT, LDA and LSA
-and the suggestion system performs 70% better than other machine learning techniques.`,
-    subheader: 'Research',
-  },
-  {
-    title: 'Evolutionary DC Selection Policy',
-    description: `Designed novel Machine Learning based data center(DC) selection policies
-in cloud-environment with Java which can outperform the existing DC selection policies and reduce the
-response time and data-processing time by 70% compared to the existing selection policies.`,
-    subheader: 'Research',
-  },
-  {
-    title: 'Movie Recommendation System with Clustering Algorithm',
-    description: `Built a movie recommendation system using
-  Apache Spark and the MovieLens dataset, employing clustering algorithms like K-Means, GMM, and LDA to
-  suggest users approximately 80% similar movies based on users viewing history.`,
-    subheader: 'Research',
-  },
-  {
-    title: 'Content Suggestion with Topic Modeling',
-    description: `Created a web-application with Python where user will be engaged
-to read blogs and continuously get suggestion based on the blogs user is reading using BERT, LDA and LSA
-and the suggestion system performs 70% better than other machine learning techniques.`,
-    subheader: 'Research',
-  },
-  {
-    title: 'Evolutionary DC Selection Policy',
-    description: `Designed novel Machine Learning based data center(DC) selection policies
-in cloud-environment with Java which can outperform the existing DC selection policies and reduce the
-response time and data-processing time by 70% compared to the existing selection policies.`,
-    subheader: 'Research',
-  },
-  {
-    title: 'Movie Recommendation System with Clustering Algorithm',
-    description: `Built a movie recommendation system using
-  Apache Spark and the MovieLens dataset, employing clustering algorithms like K-Means, GMM, and LDA to
-  suggest users approximately 80% similar movies based on users viewing history.`,
-    subheader: 'Research',
-  },
-  {
-    title: 'Content Suggestion with Topic Modeling',
-    description: `Created a web-application with Python where user will be engaged
-to read blogs and continuously get suggestion based on the blogs user is reading using BERT, LDA and LSA
-and the suggestion system performs 70% better than other machine learning techniques.`,
-    subheader: 'Research',
-  },
-  {
-    title: 'Evolutionary DC Selection Policy',
-    description: `Designed novel Machine Learning based data center(DC) selection policies
-in cloud-environment with Java which can outperform the existing DC selection policies and reduce the
-response time and data-processing time by 70% compared to the existing selection policies.`,
-    subheader: 'Automation',
-  },
-  {
-    title: 'Movie Recommendation System with Clustering Algorithm',
-    description: `Built a movie recommendation system using
-  Apache Spark and the MovieLens dataset, employing clustering algorithms like K-Means, GMM, and LDA to
-  suggest users approximately 80% similar movies based on users viewing history.`,
-    subheader: 'Research',
-  },
-  {
-    title: 'Content Suggestion with Topic Modeling',
-    description: `Created a web-application with Python where user will be engaged
-to read blogs and continuously get suggestion based on the blogs user is reading using BERT, LDA and LSA
-and the suggestion system performs 70% better than other machine learning techniques.`,
-    subheader: 'Research',
-  },
-  {
-    title: 'Evolutionary DC Selection Policy',
-    description: `Designed novel Machine Learning based data center(DC) selection policies
-in cloud-environment with Java which can outperform the existing DC selection policies and reduce the
-response time and data-processing time by 70% compared to the existing selection policies.`,
-    subheader: 'Research',
-  },
-  {
-    title: 'Movie Recommendation System with Clustering Algorithm',
-    description: `Built a movie recommendation system using
-  Apache Spark and the MovieLens dataset, employing clustering algorithms like K-Means, GMM, and LDA to
-  suggest users approximately 80% similar movies based on users viewing history.`,
-    subheader: 'Research',
-  },
-  {
-    title: 'Content Suggestion with Topic Modeling',
-    description: `Created a web-application with Python where user will be engaged
-to read blogs and continuously get suggestion based on the blogs user is reading using BERT, LDA and LSA
-and the suggestion system performs 70% better than other machine learning techniques.`,
-    subheader: 'Research',
-  },
-  {
-    title: 'Evolutionary DC Selection Policy',
-    description: `Designed novel Machine Learning based data center(DC) selection policies
-in cloud-environment with Java which can outperform the existing DC selection policies and reduce the
-response time and data-processing time by 70% compared to the existing selection policies.`,
-    subheader: 'Research',
-  },
-  {
-    title: 'Movie Recommendation System with Clustering Algorithm',
-    description: `Built a movie recommendation system using
-  Apache Spark and the MovieLens dataset, employing clustering algorithms like K-Means, GMM, and LDA to
-  suggest users approximately 80% similar movies based on users viewing history.`,
-    subheader: 'Research',
-  },
-  {
-    title: 'Content Suggestion with Topic Modeling',
-    description: `Created a web-application with Python where user will be engaged
-to read blogs and continuously get suggestion based on the blogs user is reading using BERT, LDA and LSA
-and the suggestion system performs 70% better than other machine learning techniques.`,
-    subheader: 'Web',
-  },
-];
+// const projects = [
+//   {
+//     title: 'Evolutionary DC Selection Policy',
+//     description: `Designed novel Machine Learning based data center(DC) selection policies
+// in cloud-environment with Java which can outperform the existing DC selection policies and reduce the
+// response time and data-processing time by 70% compared to the existing selection policies.`,
+//     subheader: 'Research',
+//   },
+//   {
+//     title: 'Movie Recommendation System with Clustering Algorithm',
+//     description: `Built a movie recommendation system using
+//   Apache Spark and the MovieLens dataset, employing clustering algorithms like K-Means, GMM, and LDA to
+//   suggest users approximately 80% similar movies based on users viewing history.`,
+//     subheader: 'Research',
+//   },
+//   {
+//     title: 'Content Suggestion with Topic Modeling',
+//     description: `Created a web-application with Python where user will be engaged
+// to read blogs and continuously get suggestion based on the blogs user is reading using BERT, LDA and LSA
+// and the suggestion system performs 70% better than other machine learning techniques.`,
+//     subheader: 'Research',
+//   },
+//   {
+//     title: 'Evolutionary DC Selection Policy',
+//     description: `Designed novel Machine Learning based data center(DC) selection policies
+// in cloud-environment with Java which can outperform the existing DC selection policies and reduce the
+// response time and data-processing time by 70% compared to the existing selection policies.`,
+//     subheader: 'Research',
+//   },
+//   {
+//     title: 'Movie Recommendation System with Clustering Algorithm',
+//     description: `Built a movie recommendation system using
+//   Apache Spark and the MovieLens dataset, employing clustering algorithms like K-Means, GMM, and LDA to
+//   suggest users approximately 80% similar movies based on users viewing history.`,
+//     subheader: 'Research',
+//   },
+//   {
+//     title: 'Content Suggestion with Topic Modeling',
+//     description: `Created a web-application with Python where user will be engaged
+// to read blogs and continuously get suggestion based on the blogs user is reading using BERT, LDA and LSA
+// and the suggestion system performs 70% better than other machine learning techniques.`,
+//     subheader: 'Research',
+//   },
+//   {
+//     title: 'Evolutionary DC Selection Policy',
+//     description: `Designed novel Machine Learning based data center(DC) selection policies
+// in cloud-environment with Java which can outperform the existing DC selection policies and reduce the
+// response time and data-processing time by 70% compared to the existing selection policies.`,
+//     subheader: 'Research',
+//   },
+//   {
+//     title: 'Movie Recommendation System with Clustering Algorithm',
+//     description: `Built a movie recommendation system using
+//   Apache Spark and the MovieLens dataset, employing clustering algorithms like K-Means, GMM, and LDA to
+//   suggest users approximately 80% similar movies based on users viewing history.`,
+//     subheader: 'Research',
+//   },
+//   {
+//     title: 'Content Suggestion with Topic Modeling',
+//     description: `Created a web-application with Python where user will be engaged
+// to read blogs and continuously get suggestion based on the blogs user is reading using BERT, LDA and LSA
+// and the suggestion system performs 70% better than other machine learning techniques.`,
+//     subheader: 'Research',
+//   },
+//   {
+//     title: 'Evolutionary DC Selection Policy',
+//     description: `Designed novel Machine Learning based data center(DC) selection policies
+// in cloud-environment with Java which can outperform the existing DC selection policies and reduce the
+// response time and data-processing time by 70% compared to the existing selection policies.`,
+//     subheader: 'Automation',
+//   },
+//   {
+//     title: 'Movie Recommendation System with Clustering Algorithm',
+//     description: `Built a movie recommendation system using
+//   Apache Spark and the MovieLens dataset, employing clustering algorithms like K-Means, GMM, and LDA to
+//   suggest users approximately 80% similar movies based on users viewing history.`,
+//     subheader: 'Research',
+//   },
+//   {
+//     title: 'Content Suggestion with Topic Modeling',
+//     description: `Created a web-application with Python where user will be engaged
+// to read blogs and continuously get suggestion based on the blogs user is reading using BERT, LDA and LSA
+// and the suggestion system performs 70% better than other machine learning techniques.`,
+//     subheader: 'Research',
+//   },
+//   {
+//     title: 'Evolutionary DC Selection Policy',
+//     description: `Designed novel Machine Learning based data center(DC) selection policies
+// in cloud-environment with Java which can outperform the existing DC selection policies and reduce the
+// response time and data-processing time by 70% compared to the existing selection policies.`,
+//     subheader: 'Research',
+//   },
+//   {
+//     title: 'Movie Recommendation System with Clustering Algorithm',
+//     description: `Built a movie recommendation system using
+//   Apache Spark and the MovieLens dataset, employing clustering algorithms like K-Means, GMM, and LDA to
+//   suggest users approximately 80% similar movies based on users viewing history.`,
+//     subheader: 'Research',
+//   },
+//   {
+//     title: 'Content Suggestion with Topic Modeling',
+//     description: `Created a web-application with Python where user will be engaged
+// to read blogs and continuously get suggestion based on the blogs user is reading using BERT, LDA and LSA
+// and the suggestion system performs 70% better than other machine learning techniques.`,
+//     subheader: 'Research',
+//   },
+//   {
+//     title: 'Evolutionary DC Selection Policy',
+//     description: `Designed novel Machine Learning based data center(DC) selection policies
+// in cloud-environment with Java which can outperform the existing DC selection policies and reduce the
+// response time and data-processing time by 70% compared to the existing selection policies.`,
+//     subheader: 'Research',
+//   },
+//   {
+//     title: 'Movie Recommendation System with Clustering Algorithm',
+//     description: `Built a movie recommendation system using
+//   Apache Spark and the MovieLens dataset, employing clustering algorithms like K-Means, GMM, and LDA to
+//   suggest users approximately 80% similar movies based on users viewing history.`,
+//     subheader: 'Research',
+//   },
+//   {
+//     title: 'Content Suggestion with Topic Modeling',
+//     description: `Created a web-application with Python where user will be engaged
+// to read blogs and continuously get suggestion based on the blogs user is reading using BERT, LDA and LSA
+// and the suggestion system performs 70% better than other machine learning techniques.`,
+//     subheader: 'Web',
+//   },
+// ];
 
 export function Search() {
   return (
@@ -165,6 +166,7 @@ export function Search() {
 export default function Projects() {
   const [page, setPage] = React.useState(1);
   const projectsPerPage = 6;
+  const projects:any[] = [...researchProjects, ...webProjects, ...backendProjects, ...mobileProjects, ...frontendProjects, ...automationProjects, ...devopsProjects, ...boilerplateProjects];
   const totalPages = Math.ceil(projects.length / projectsPerPage);
   
   // Get current projects for the page

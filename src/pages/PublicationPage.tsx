@@ -11,7 +11,7 @@ import {
   Typography,
 } from '@mui/material';
 import getLPTheme from '../theme/getLPTheme';
-import { papers } from '../utilities/Property';
+import { papers } from '../data/Publication';
 
 
 

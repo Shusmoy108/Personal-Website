@@ -11,7 +11,7 @@ import pp from './pp.jpg'
 import { visuallyHidden } from '@mui/utils';
 import { styled } from '@mui/material/styles';
 import { useEffect, useState } from 'react';
-import { aboutMe } from '../../utilities/Property';
+import { aboutMe } from '../../data/Info';
 
 const TypingAnimation = ({ text, speed = 100, pause = 1000 }:any) => {
     const [displayedText, setDisplayedText] = useState("");

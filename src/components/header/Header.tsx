@@ -86,36 +86,6 @@ export default function AppAppBar() {
               >
                 Research
               </Button>
-              {/* <Button
-                variant='text'
-                color='info'
-                size='small'
-                style={{
-                  textTransform: 'none',
-                  fontSize: 22,
-                  fontFamily: 'Cookie',
-                }}
-                onClick={() => {
-                  navigate('/skill');
-                }}
-              >
-                Skill
-              </Button> */}
-              <Button
-                variant='text'
-                color='info'
-                size='small'
-                style={{
-                  textTransform: 'none',
-                  fontSize: 22,
-                  fontFamily: 'Cookie',
-                }}
-                onClick={() => {
-                  navigate('/publication');
-                }}
-              >
-                Publications
-              </Button>
               <Button
                 variant='text'
                 color='info'
@@ -146,7 +116,39 @@ export default function AppAppBar() {
               >
                 Projects
               </Button>
+              {/* <Button
+                variant='text'
+                color='info'
+                size='small'
+                style={{
+                  textTransform: 'none',
+                  fontSize: 22,
+                  fontFamily: 'Cookie',
+                }}
+                onClick={() => {
+                  navigate('/skill');
+                }}
+              >
+                Skill
+              </Button> */}
               <Button
+                variant='text'
+                color='info'
+                size='small'
+                style={{
+                  textTransform: 'none',
+                  fontSize: 22,
+                  fontFamily: 'Cookie',
+                }}
+                onClick={() => {
+                  navigate('/publication');
+                }}
+              >
+                Publications
+              </Button>
+
+             
+              {/* <Button
                 variant='text'
                 color='info'
                 size='small'
@@ -157,7 +159,7 @@ export default function AppAppBar() {
                 }}
               >
                 Blogs
-              </Button>
+              </Button> */}
               {/* <Button variant='text' color='info' size='small' style={{textTransform:'none',fontSize:22, fontFamily:"Cookie"}}>
                 Travel Stories
               </Button> */}
@@ -237,13 +239,6 @@ export default function AppAppBar() {
                 </MenuItem>
                 <MenuItem
                   onClick={() => {
-                    navigate('/publication');
-                  }}
-                >
-                  Publications
-                </MenuItem>
-                <MenuItem
-                  onClick={() => {
                     navigate('/experience');
                   }}
                 >
@@ -256,7 +251,15 @@ export default function AppAppBar() {
                 >
                   Projects
                 </MenuItem>
-                <MenuItem>Blogs</MenuItem>
+                <MenuItem
+                  onClick={() => {
+                    navigate('/publication');
+                  }}
+                >
+                  Publications
+                </MenuItem>
+               
+                {/* <MenuItem>Blogs</MenuItem> */}
                 <Divider sx={{ my: 3 }} />
                 <MenuItem>
                   <Button
@@ -264,6 +267,9 @@ export default function AppAppBar() {
                     variant='contained'
                     fullWidth
                     style={{ textTransform: 'none', fontFamily: 'Comic Nueue' }}
+                    onClick={() => {
+                      navigate('/connect');
+                    }}
                   >
                     Let's Connect
                   </Button>

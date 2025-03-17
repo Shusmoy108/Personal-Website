@@ -6,16 +6,16 @@ import EmailIcon from '@mui/icons-material/Email';
 import  SitemarkIcon  from '../header/SitemarkIcon';
 import PhoneIcon from '@mui/icons-material/Phone';
 import HomeIcon from '@mui/icons-material/Home';
+import { contactInfo } from '../data/Info';
 const items = [
   {
     icon: <HomeIcon sx={{ color: 'text.secondary' }} />,
-    title: '637 E Bear Blvd, Apt-05',
-    description:
-      'Springfield, Missouri, USA MO-65806',
+    title: contactInfo.addressLine1,
+    description:contactInfo.addressLine2,
   },
   {
     icon: <EmailIcon sx={{ color: 'text.secondary' }} />,
-    title: 'ShusmoyChowdhury.Personal@Gmail.com',
+    title:contactInfo.email,
     description:
       '',
   },
