@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { createTheme, CssBaseline, PaletteMode, ThemeProvider } from '@mui/material';
+import getLPTheme from './theme/getLPTheme';
+import AppRoutes from './Route';
+
 
 function App() {
+  const [mode, setMode] = React.useState<PaletteMode>('light');
+  const LPtheme = createTheme(getLPTheme(mode));
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={LPtheme}>
+      <CssBaseline />
+      <div className="App">
+      <AppRoutes />
+
+      </div>
+
+    {/* <div className="App">
+     <AppAppBar/>
+     <Hero/>
+     <Footer/>
+    </div> */}
+    </ThemeProvider>
   );
 }
 
