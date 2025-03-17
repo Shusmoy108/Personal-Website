@@ -30,7 +30,7 @@ export function ProjectCard({
       <Card variant='outlined'>
         <Box
           sx={{ px: 2, pb: 2 }}
-          style={{ height: 280, width: 280, padding: 20 }}
+          style={{ height: 280,  padding: 20 }}
         >
           <Box
             sx={[
