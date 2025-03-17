@@ -9,6 +9,7 @@ import Stack from '@mui/material/Stack';
 import MuiCard from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
 import SitemarkIcon from '../header/SitemarkIcon';
+import { contactInfo } from '../../data/Info';
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
@@ -89,9 +90,9 @@ export default function Connect() {
     if (!isValid) {
       return;
     }
-    
-    const subject = "Contact with Shusmoy";
-    const mailtoLink = `mailto:shusmoy.cse@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+    const fullMessage= message+ "\n"+"My Contact Email is "+email;
+    const subject = "Connect with Shusmoy";
+    const mailtoLink = `mailto:${contactInfo.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(fullMessage)}`;
     
     window.location.href = mailtoLink; // Opens the email client
     
