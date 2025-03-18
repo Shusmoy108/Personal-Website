@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import FacebookIcon from '@mui/icons-material/GitHub';
+import GithubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/X';
 import SitemarkIcon from '../header/SitemarkIcon';
@@ -14,7 +14,7 @@ function Copyright() {
   return (
     <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
       {'Copyright © '}
-      <Link color="text.secondary" href="https://mui.com/">
+      <Link color="text.secondary" href="https://shusmoychowdhury.com/">
         Shusmoy Chowdhury
       </Link>
       &nbsp;
@@ -59,16 +59,16 @@ export default function Footer() {
           <IconButton
             color="inherit"
             size="small"
-            href="https://github.com/mui"
+            href="https://github.com/shusmoy108"
             aria-label="GitHub"
             sx={{ alignSelf: 'center' }}
           >
-            <FacebookIcon />
+            <GithubIcon />
           </IconButton>
           <IconButton
             color="inherit"
             size="small"
-            href="https://x.com/MaterialUI"
+            href="https://x.com/"
             aria-label="X"
             sx={{ alignSelf: 'center' }}
           >
@@ -77,7 +77,7 @@ export default function Footer() {
           <IconButton
             color="inherit"
             size="small"
-            href="https://www.linkedin.com/company/mui/"
+            href="https://www.linkedin.com/in/shusmoy-chowdhury"
             aria-label="LinkedIn"
             sx={{ alignSelf: 'center' }}
           >

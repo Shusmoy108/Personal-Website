@@ -1,7 +1,7 @@
 export const contactInfo = {
     addressLine1: '637 E Bear Blvd',
     addressLine2: 'Springfield, Missouri-65806',
-    email: 'ShusmoyChowdhury.Personnel@Gmail.Com'
+    email: 'ShusmoyChowdhury.Personal@Gmail.Com'
   
   }
   

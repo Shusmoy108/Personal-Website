@@ -1,4 +1,6 @@
 
+export const projectInfo=`I have worked on a diverse range of projects spanning cloud computing, machine learning, full-stack development, DevOps, cybersecurity, and mobile applications. My work includes optimizing cloud infrastructure, developing AI-driven recommendation systems, building secure authentication platforms, and designing scalable web and mobile applications. I have also implemented DevOps automation for streamlined deployments and worked on cybersecurity solutions to enhance system security. Recently, I have started exploring blockchain and cryptocurrency applications. My projects reflect my passion for innovation, problem-solving, and creating efficient, scalable solutions.`
+
 export const projectCategory=[
     "All categories",
     "Research",
@@ -16,7 +18,8 @@ export const researchProjects = [
       title: 'Evolutionary DC Selection Policy',
       description: `Designed novel Machine Learning based data center(DC) selection policies in cloud-environment with Java which can outperform the existing DC selection policies and reduce the response time and data-processing time by 70% compared to the existing selection policies.`,
       subheader: 'Research',
-      link: `https://github.com/Shusmoy108/CloudAnalyst`,
+      link: ""
+      //`https://github.com/Shusmoy108/CloudAnalyst`,
     },
     {
       title: 'Movie Recommendation System with Clustering Algorithm',
@@ -91,13 +94,15 @@ export const researchProjects = [
       title: 'Facebook Marketplacelisting',
       description: `Developed a flexible project management system using Node.js and React.js, adaptable to various industries. Our analysis revealed that project structures vary across industries and even within departments of the same organization. Most existing solutions lack customization, limiting users' ability to design their workflows. Our software empowers users to create personalized project structures, which can later be used to assign tasks efficiently.`,
       subheader: 'Automation',
-      link: `https://github.com/Shusmoy108/Java-Facebook-Marketplacelisting`,
+      link: ''
+      //`https://github.com/Shusmoy108/Java-Facebook-Marketplacelisting`,
     },
     {
       title: 'Facebook Page Automation',
       description: `Developed a web-based blog writing system using Node.js and React.js, allowing users to write on various topics. Readers can comment, with authors having the ability to remove unwanted comments. Blogs can also receive support from readers. A mobile app version is available, making the platform accessible on the go. This system can serve as an online newspaper or a discussion hub..`,
       subheader: 'Automation',
-      link: `https://github.com/Shusmoy108/Java-Facebook-Page-Automation`,
+      link: ''
+      //`https://github.com/Shusmoy108/Java-Facebook-Page-Automation`,
     }
   ];
   

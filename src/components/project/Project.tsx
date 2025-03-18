@@ -5,150 +5,24 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { ProjectCard } from '../projectcard/ProjectCard';
 import ProjectCategory from '../projectcategory/ProjectCategory';
-import { IconButton, Pagination } from '@mui/material';
+import { Pagination } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
 import InputAdornment from '@mui/material/InputAdornment';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded';
-import { automationProjects, backendProjects, boilerplateProjects, devopsProjects, frontendProjects, mobileProjects, researchProjects, webProjects } from '../../data/Projects';
+import { automationProjects, backendProjects, boilerplateProjects, devopsProjects, frontendProjects, mobileProjects, projectInfo, researchProjects, webProjects } from '../../data/Projects';
+import { shuffleArray } from '../../utilities/Utility';
 
-// const projects = [
-//   {
-//     title: 'Evolutionary DC Selection Policy',
-//     description: `Designed novel Machine Learning based data center(DC) selection policies
-// in cloud-environment with Java which can outperform the existing DC selection policies and reduce the
-// response time and data-processing time by 70% compared to the existing selection policies.`,
-//     subheader: 'Research',
-//   },
-//   {
-//     title: 'Movie Recommendation System with Clustering Algorithm',
-//     description: `Built a movie recommendation system using
-//   Apache Spark and the MovieLens dataset, employing clustering algorithms like K-Means, GMM, and LDA to
-//   suggest users approximately 80% similar movies based on users viewing history.`,
-//     subheader: 'Research',
-//   },
-//   {
-//     title: 'Content Suggestion with Topic Modeling',
-//     description: `Created a web-application with Python where user will be engaged
-// to read blogs and continuously get suggestion based on the blogs user is reading using BERT, LDA and LSA
-// and the suggestion system performs 70% better than other machine learning techniques.`,
-//     subheader: 'Research',
-//   },
-//   {
-//     title: 'Evolutionary DC Selection Policy',
-//     description: `Designed novel Machine Learning based data center(DC) selection policies
-// in cloud-environment with Java which can outperform the existing DC selection policies and reduce the
-// response time and data-processing time by 70% compared to the existing selection policies.`,
-//     subheader: 'Research',
-//   },
-//   {
-//     title: 'Movie Recommendation System with Clustering Algorithm',
-//     description: `Built a movie recommendation system using
-//   Apache Spark and the MovieLens dataset, employing clustering algorithms like K-Means, GMM, and LDA to
-//   suggest users approximately 80% similar movies based on users viewing history.`,
-//     subheader: 'Research',
-//   },
-//   {
-//     title: 'Content Suggestion with Topic Modeling',
-//     description: `Created a web-application with Python where user will be engaged
-// to read blogs and continuously get suggestion based on the blogs user is reading using BERT, LDA and LSA
-// and the suggestion system performs 70% better than other machine learning techniques.`,
-//     subheader: 'Research',
-//   },
-//   {
-//     title: 'Evolutionary DC Selection Policy',
-//     description: `Designed novel Machine Learning based data center(DC) selection policies
-// in cloud-environment with Java which can outperform the existing DC selection policies and reduce the
-// response time and data-processing time by 70% compared to the existing selection policies.`,
-//     subheader: 'Research',
-//   },
-//   {
-//     title: 'Movie Recommendation System with Clustering Algorithm',
-//     description: `Built a movie recommendation system using
-//   Apache Spark and the MovieLens dataset, employing clustering algorithms like K-Means, GMM, and LDA to
-//   suggest users approximately 80% similar movies based on users viewing history.`,
-//     subheader: 'Research',
-//   },
-//   {
-//     title: 'Content Suggestion with Topic Modeling',
-//     description: `Created a web-application with Python where user will be engaged
-// to read blogs and continuously get suggestion based on the blogs user is reading using BERT, LDA and LSA
-// and the suggestion system performs 70% better than other machine learning techniques.`,
-//     subheader: 'Research',
-//   },
-//   {
-//     title: 'Evolutionary DC Selection Policy',
-//     description: `Designed novel Machine Learning based data center(DC) selection policies
-// in cloud-environment with Java which can outperform the existing DC selection policies and reduce the
-// response time and data-processing time by 70% compared to the existing selection policies.`,
-//     subheader: 'Automation',
-//   },
-//   {
-//     title: 'Movie Recommendation System with Clustering Algorithm',
-//     description: `Built a movie recommendation system using
-//   Apache Spark and the MovieLens dataset, employing clustering algorithms like K-Means, GMM, and LDA to
-//   suggest users approximately 80% similar movies based on users viewing history.`,
-//     subheader: 'Research',
-//   },
-//   {
-//     title: 'Content Suggestion with Topic Modeling',
-//     description: `Created a web-application with Python where user will be engaged
-// to read blogs and continuously get suggestion based on the blogs user is reading using BERT, LDA and LSA
-// and the suggestion system performs 70% better than other machine learning techniques.`,
-//     subheader: 'Research',
-//   },
-//   {
-//     title: 'Evolutionary DC Selection Policy',
-//     description: `Designed novel Machine Learning based data center(DC) selection policies
-// in cloud-environment with Java which can outperform the existing DC selection policies and reduce the
-// response time and data-processing time by 70% compared to the existing selection policies.`,
-//     subheader: 'Research',
-//   },
-//   {
-//     title: 'Movie Recommendation System with Clustering Algorithm',
-//     description: `Built a movie recommendation system using
-//   Apache Spark and the MovieLens dataset, employing clustering algorithms like K-Means, GMM, and LDA to
-//   suggest users approximately 80% similar movies based on users viewing history.`,
-//     subheader: 'Research',
-//   },
-//   {
-//     title: 'Content Suggestion with Topic Modeling',
-//     description: `Created a web-application with Python where user will be engaged
-// to read blogs and continuously get suggestion based on the blogs user is reading using BERT, LDA and LSA
-// and the suggestion system performs 70% better than other machine learning techniques.`,
-//     subheader: 'Research',
-//   },
-//   {
-//     title: 'Evolutionary DC Selection Policy',
-//     description: `Designed novel Machine Learning based data center(DC) selection policies
-// in cloud-environment with Java which can outperform the existing DC selection policies and reduce the
-// response time and data-processing time by 70% compared to the existing selection policies.`,
-//     subheader: 'Research',
-//   },
-//   {
-//     title: 'Movie Recommendation System with Clustering Algorithm',
-//     description: `Built a movie recommendation system using
-//   Apache Spark and the MovieLens dataset, employing clustering algorithms like K-Means, GMM, and LDA to
-//   suggest users approximately 80% similar movies based on users viewing history.`,
-//     subheader: 'Research',
-//   },
-//   {
-//     title: 'Content Suggestion with Topic Modeling',
-//     description: `Created a web-application with Python where user will be engaged
-// to read blogs and continuously get suggestion based on the blogs user is reading using BERT, LDA and LSA
-// and the suggestion system performs 70% better than other machine learning techniques.`,
-//     subheader: 'Web',
-//   },
-// ];
 
-export function Search() {
+function Search({ value, onChange }: { value: string; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void }) {
   return (
-    <FormControl sx={{ width: { sm: '25ch' } }} variant="outlined">
+    <FormControl sx={{ width: { xs: '100%', sm: '25ch' } }} variant="outlined">
       <OutlinedInput
         size="small"
         id="search"
-        placeholder="Search…"
+        placeholder="Search projects..."
+        value={value}
+        onChange={onChange}
         sx={{ flexGrow: 1 }}
         startAdornment={
           <InputAdornment position="start" sx={{ color: 'text.primary' }}>
@@ -156,7 +30,7 @@ export function Search() {
           </InputAdornment>
         }
         inputProps={{
-          'aria-label': 'search',
+          'aria-label': 'search projects',
         }}
       />
     </FormControl>
@@ -164,15 +38,73 @@ export function Search() {
 }
 
 export default function Projects() {
+  // All projects combined and shuffled
+  const allProjects = React.useMemo(() => 
+    shuffleArray([
+      ...researchProjects, 
+      ...webProjects, 
+      ...backendProjects, 
+      ...mobileProjects, 
+      ...frontendProjects, 
+      ...automationProjects, 
+      ...devopsProjects, 
+      ...boilerplateProjects
+    ]), 
+    []
+  );
+  
+
+  
+  // State for selected category, search query, and pagination
+  const [selectedCategory, setSelectedCategory] = React.useState("All categories");
+  const [searchQuery, setSearchQuery] = React.useState("");
   const [page, setPage] = React.useState(1);
   const projectsPerPage = 6;
-  const projects:any[] = [...researchProjects, ...webProjects, ...backendProjects, ...mobileProjects, ...frontendProjects, ...automationProjects, ...devopsProjects, ...boilerplateProjects];
-  const totalPages = Math.ceil(projects.length / projectsPerPage);
+  
+  // Handle search input change
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value);
+  };
+  
+  // Filter projects based on selected category and search query
+  const filteredProjects = React.useMemo(() => {
+    let filtered = allProjects;
+    
+    // Filter by category if not "All categories"
+    if (selectedCategory !== "All categories") {
+      filtered = filtered.filter(project => project.subheader === selectedCategory);
+    }
+    
+    // Filter by search query if not empty
+    if (searchQuery.trim() !== "") {
+      const query = searchQuery.toLowerCase().trim();
+      filtered = filtered.filter(project => 
+        project.title.toLowerCase().includes(query) || 
+        project.description.toLowerCase().includes(query) || 
+        project.subheader.toLowerCase().includes(query)
+      );
+    }
+    
+    return filtered;
+  }, [allProjects, selectedCategory, searchQuery]);
+  
+  // Calculate total pages based on filtered projects
+  const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
+  
+  // Reset to page 1 when category or search changes
+  React.useEffect(() => {
+    setPage(1);
+  }, [selectedCategory, searchQuery]);
   
   // Get current projects for the page
   const indexOfLastProject = page * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
-  const currentProjects = projects.slice(indexOfFirstProject, indexOfLastProject);
+  const currentProjects = filteredProjects.slice(indexOfFirstProject, indexOfLastProject);
+  
+  // Handle category change
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+  };
   
   // Handle page change
   const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
@@ -198,7 +130,7 @@ export default function Projects() {
         alignItems: 'center',
         gap: { xs: 3, sm: 6 },
       }}
-      style={{ padding: 0,gap:24 }}
+      style={{ padding: 0, gap: 24 }}
     >
       <Box
         sx={{
@@ -229,50 +161,63 @@ export default function Projects() {
           display: { xs: 'none', md: 'flex' },
           justifyContent: 'flex-end'
         }}>
-          <Search />
+          <Search value={searchQuery} onChange={handleSearchChange} />
         </Box>
       </Box>
       
       <Box
         sx={{
-          width: { sm: '100%', md: '60%' },
+          width: { sm: '100%', md: '100%' },
           textAlign: { sm: 'left', md: 'center' },
           mb: 4
         }}
       >
-        <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-          Explore my portfolio of projects spanning various technologies and domains.
-          Each project demonstrates different skills and approaches to solving real-world problems.
+        <Typography variant="body1" sx={{ color: 'text.secondary', textAlign:'justify' }}>
+          {projectInfo}
         </Typography>
       </Box>
+      
+      {/* Mobile search - only visible on small screens */}
       <Box
         sx={{
-          display: { xs: 'flex', sm: 'none' },
-          flexDirection: 'row',
-          justifyContent:'center',
-          gap: 1,
-          width: { xs: '100%', md: 'fit-content' },
-          overflow: 'auto',
+          display: { xs: 'flex', md: 'none' },
+          width: '100%',
+          mb: 2
         }}
       >
-        <Search />
+        <Search value={searchQuery} onChange={handleSearchChange} />
       </Box>
-      <ProjectCategory />
+      
+      <ProjectCategory 
+        selectedCategory={selectedCategory}
+        onCategoryChange={handleCategoryChange}
+      />
       
       <Grid
         container
         spacing={3}
-        sx={{ alignItems: 'center', justifyContent: 'center', width: '100%' }}
+        sx={{ alignItems: 'center', justifyContent: 'flex-start', width: '100%' }}
       >
-        {currentProjects.map((item, index) => (
-          <Grid item key={indexOfFirstProject + index} xs={12} sm={6} md={4}>
-            <ProjectCard 
-              title={item.title}
-              description={item.description}
-              subheader={item.subheader}
-            />
-          </Grid>
-        ))}
+        {currentProjects.length > 0 ? (
+          currentProjects.map((item, index) => (
+            <Grid item key={indexOfFirstProject + index} xs={12} sm={6} md={4}>
+              <ProjectCard 
+                title={item.title}
+                description={item.description}
+                subheader={item.subheader}
+                link={item.link}
+              />
+            </Grid>
+          ))
+        ) : (
+          <Box sx={{ py: 4, textAlign: 'center', width: '100%' }}>
+            <Typography variant="h6" color="text.secondary">
+              {searchQuery.trim() !== "" 
+                ? `No projects found matching "${searchQuery}"`
+                : "No projects found in this category."}
+            </Typography>
+          </Box>
+        )}
       </Grid>
       
       {totalPages > 1 && (

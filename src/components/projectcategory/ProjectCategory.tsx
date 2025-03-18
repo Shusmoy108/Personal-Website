@@ -1,25 +1,20 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import AvatarGroup from '@mui/material/AvatarGroup';
 import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Chip from '@mui/material/Chip';
-import Grid from '@mui/material/Grid2';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import { projectCategory } from '../../data/Projects';
 
+export interface ProjectCategoryProps {
+  selectedCategory: string;
+  onCategoryChange: (category: string) => void;
+}
 
-export default function ProjectCategory() {
-  const [focusedIndex, setFocusedIndex] = React.useState<number>(0);
-
-  const handleClick = (index: number) => {
-    setFocusedIndex(index);
-    console.info('You clicked the filter chip.');
+export default function ProjectCategory({ 
+  selectedCategory, 
+  onCategoryChange 
+}: ProjectCategoryProps) {
+  
+  const handleClick = (category: string) => {
+    onCategoryChange(category);
   };
-
 
   return (
     <Box sx={{ 
@@ -71,19 +66,19 @@ export default function ProjectCategory() {
           justifyContent: { xs: 'flex-start', md: 'space-between' }, // Space between on larger screens
         }}
       >
-        {projectCategory.map((category, index) => (
+        {projectCategory.map((category) => (
           <Chip
-            key={index}
-            onClick={() => handleClick(index)}
+            key={category}
+            onClick={() => handleClick(category)}
             size="medium"
             label={category}
             sx={{
-              backgroundColor: focusedIndex === index ? 'primary.main' : 'transparent',
-              color: focusedIndex === index ? 'white' : 'text.primary',
-              border: focusedIndex === index ? '1px solid' : 'none',
-              borderColor: focusedIndex === index ? 'primary.main' : 'transparent',
+              backgroundColor: selectedCategory === category ? 'primary.main' : 'transparent',
+              color: selectedCategory === category ? 'white' : 'text.primary',
+              border: selectedCategory === category ? '1px solid' : 'none',
+              borderColor: selectedCategory === category ? 'primary.main' : 'transparent',
               '&:hover': {
-                backgroundColor: focusedIndex === index ? 'primary.dark' : 'action.hover',
+                backgroundColor: selectedCategory === category ? 'primary.dark' : 'action.hover',
               },
               whiteSpace: 'nowrap',
               flexShrink: 0,

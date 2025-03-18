@@ -13,7 +13,7 @@ import MedicationIcon from '@mui/icons-material/Medication';
 import { useEffect, useRef, useState } from 'react';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import SkillSection from '../skillsection/SkillSection';
-import { experience } from '../../data/Experience';
+import { experience, experienceInfo } from '../../data/Experience';
 
 const items=experience;
 // const items = [
@@ -368,13 +368,7 @@ export default function Experience() {
             color: 'text.secondary', mb: { xs: 2, sm: 4 }, fontFamily: 'Tinos',
           }}
         >
-          Experienced Software Engineer with a track record of delivering
-          cutting-edge web and mobile applications to prestigious clients over
-          4+ years. Demonstrated expertise in adeptly managing software
-          development teams through strategic planning, consulting, and
-          efficient work allocation. Proficient in DevOps operations,
-          successfully implementing automation in development processes. Excited
-          to bring my skills and achievements to a dynamic team of innovators.
+          {experienceInfo}
         </Typography>
       </Box>
       <Box

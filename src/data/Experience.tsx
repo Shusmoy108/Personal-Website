@@ -4,6 +4,13 @@ import SecurityIcon from '@mui/icons-material/Security';
 import DevicesRoundedIcon from '@mui/icons-material/DevicesRounded';
 import MedicationIcon from '@mui/icons-material/Medication';
 
+export const experienceInfo=`          Experienced Software Engineer with a track record of delivering
+          cutting-edge web and mobile applications to prestigious clients over
+          4+ years. Demonstrated expertise in adeptly managing software
+          development teams through strategic planning, consulting, and
+          efficient work allocation. Proficient in DevOps operations,
+          successfully implementing automation in development processes. Excited
+          to bring my skills and achievements to a dynamic team of innovators.`
 export const experience = [
   {
     icon: <CloudIcon />,

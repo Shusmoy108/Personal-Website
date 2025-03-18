@@ -4,6 +4,15 @@ import SecurityIcon from '@mui/icons-material/Security';
 import DevicesRoundedIcon from '@mui/icons-material/DevicesRounded';
 import MedicationIcon from '@mui/icons-material/Medication';
 
+export const researchInfo=` My research focuses on addressing global challenges through AI and
+          machine learning solutions tailored for developing countries. Key
+          areas of interest include enhancing cloud computing infrastructure,
+          improving IoT device security in smart homes, advancing medical data
+          analysis for low-income populations, and bridging social disparities
+          between developed and developing nations. My goal is to identify
+          vulnerabilities and develop scalable, culturally appropriate solutions
+          that can improve education, healthcare, technology adoption, and
+          overall well-being in resource-constrained environments.`
 export const research = [
   {
     icon: <CloudIcon />,

@@ -6,7 +6,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import  SitemarkIcon  from '../header/SitemarkIcon';
 import PhoneIcon from '@mui/icons-material/Phone';
 import HomeIcon from '@mui/icons-material/Home';
-import { contactInfo } from '../data/Info';
+import { contactInfo } from '../../data/Info';
 const items = [
   {
     icon: <HomeIcon sx={{ color: 'text.secondary' }} />,

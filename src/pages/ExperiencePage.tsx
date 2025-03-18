@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import AppAppBar from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 import {  Box, Container } from '@mui/material';
