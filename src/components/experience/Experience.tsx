@@ -15,7 +15,7 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import SkillSection from '../skillsection/SkillSection';
 import { experience, experienceInfo } from '../../data/Experience';
 
-const items=experience;
+const items = experience;
 // const items = [
 //   {
 //     icon: <CloudIcon />,
@@ -55,7 +55,7 @@ const items=experience;
 //     –Working as a seasoned full-stack developer by the company to architect and develop cutting-edge software solutions for web and mobile applications with Java, Javascript, and React Native.
 
 //     –Spearheaded the design and implementation of an AWS streamlined DevOps operation(Codepipeline, Codebuild, Codedeploy, Lambda, ECS, EC2, S3, IAM, RDS), deployed mobile application in google playstore and appstore, enhancing automation for the entire development team and increasing work efficiency by 70%.
-    
+
 //     –Enhanced product quality by 85% with employing Google Analytics, Google ReCAPTCHA, CHATGPT, ZOHO and advanced SEO strategies.`,
 //   },
 //   {
@@ -231,19 +231,55 @@ export function MobileLayout({
             flexDirection: 'column',
             alignItems: 'flex-start',
             justifyContent: 'flex-start',
+            // Custom scrollbar styling
+            '&::-webkit-scrollbar': {
+              height: '4px',
+              display: 'none',
+            },
+            '&:hover::-webkit-scrollbar': {
+              display: 'block',
+            },
+            '&::-webkit-scrollbar-track': {
+              backgroundColor: 'rgba(255,255,255,0.1)',
+              borderRadius: '10px',
+            },
+            '&::-webkit-scrollbar-thumb': {
+              backgroundColor: 'rgba(255,255,255,0.7)',
+              borderRadius: '10px',
+              '&:hover': {
+                backgroundColor: 'rgba(255,255,255,0.9)',
+              },
+            },
+            '&::-webkit-scrollbar-button': {
+              display: 'none',
+            },
+            scrollbarWidth: 'thin',
+            scrollbarColor: 'rgba(255,255,255,0.7) rgba(255,255,255,0.1)',
+            '&': {
+              scrollbarWidth: 'none',
+            },
+            '&:hover': {
+              scrollbarWidth: 'thin',
+            },
           })}
         >
-          <Typography variant='h4' style={{
-            textAlign: "center", fontFamily: 'Tinos',
-            width: '100%'
-          }}>Highlights</Typography>
+          <Typography
+            variant='h4'
+            style={{
+              textAlign: 'center',
+              fontFamily: 'Tinos',
+              width: '100%',
+            }}
+          >
+            Highlights
+          </Typography>
           <Typography
             variant='body2'
             sx={{
               textAlign: 'justify',
               whiteSpace: 'pre-line',
-              width: '100%', fontFamily: 'Tinos',
-
+              width: '100%',
+              fontFamily: 'Tinos',
             }}
           >
             {mobileTypedText}
@@ -253,15 +289,21 @@ export function MobileLayout({
           <Typography
             gutterBottom
             sx={{
-              color: 'text.primary', fontWeight: 'medium', fontFamily: 'Tinos',
+              color: 'text.primary',
+              fontWeight: 'medium',
+              fontFamily: 'Tinos',
             }}
           >
             {selectedFeature.title}
           </Typography>
-          <Typography variant='body2' sx={{
-            color: 'text.secondary', fontFamily: 'Tinos',
-            mb: 1.5
-          }}>
+          <Typography
+            variant='body2'
+            sx={{
+              color: 'text.secondary',
+              fontFamily: 'Tinos',
+              mb: 1.5,
+            }}
+          >
             {selectedFeature.description}
           </Typography>
         </Box>
@@ -346,9 +388,13 @@ export default function Experience() {
           color='primary'
           variant='outlined'
           onClick={openResume}
-          style={{ textTransform: 'none', fontFamily: 'Comic Nueue', fontSize: 16 }}
+          style={{
+            textTransform: 'none',
+            fontFamily: 'Comic Nueue',
+            fontSize: 16,
+          }}
         >
-          View Full CV{' '} <InfoOutlinedIcon />
+          View Full CV <InfoOutlinedIcon />
         </Button>
       </div>
 
@@ -357,7 +403,7 @@ export default function Experience() {
           component='h2'
           variant='h4'
           gutterBottom
-          sx={{ color: 'text.primary', fontFamily: 'Tinos', }}
+          sx={{ color: 'text.primary', fontFamily: 'Tinos' }}
         >
           Professional Experience
         </Typography>
@@ -365,7 +411,9 @@ export default function Experience() {
           variant='body1'
           style={{ textAlign: 'justify' }}
           sx={{
-            color: 'text.secondary', mb: { xs: 2, sm: 4 }, fontFamily: 'Tinos',
+            color: 'text.secondary',
+            mb: { xs: 2, sm: 4 },
+            fontFamily: 'Tinos',
           }}
         >
           {experienceInfo}
@@ -428,12 +476,22 @@ export default function Experience() {
                 >
                   {/* {icon} */}
 
-                  <Typography variant='h6' sx={{
-                    fontFamily: 'Tinos',
-                  }}>{title}</Typography>
-                  <Typography variant='body2' sx={{
-                    fontFamily: 'Tinos',
-                  }}>{description}</Typography>
+                  <Typography
+                    variant='h6'
+                    sx={{
+                      fontFamily: 'Tinos',
+                    }}
+                  >
+                    {title}
+                  </Typography>
+                  <Typography
+                    variant='body2'
+                    sx={{
+                      fontFamily: 'Tinos',
+                    }}
+                  >
+                    {description}
+                  </Typography>
                 </Box>
               </Box>
             ))}
@@ -472,12 +530,44 @@ export default function Experience() {
                 alignItems: 'flex-start',
                 justifyContent: 'flex-start',
                 gap: 1,
+                // Custom scrollbar styling
+                '&::-webkit-scrollbar': {
+                  height: '4px',
+                  display: 'none',
+                },
+                '&:hover::-webkit-scrollbar': {
+                  display: 'block',
+                },
+                '&::-webkit-scrollbar-track': {
+                  backgroundColor: 'rgba(255,255,255,0.1)',
+                  borderRadius: '10px',
+                },
+                '&::-webkit-scrollbar-thumb': {
+                  backgroundColor: 'rgba(255,255,255,0.7)',
+                  borderRadius: '10px',
+                  '&:hover': {
+                    backgroundColor: 'rgba(255,255,255,0.9)',
+                  },
+                },
+                '&::-webkit-scrollbar-button': {
+                  display: 'none',
+                },
+                scrollbarWidth: 'thin',
+                scrollbarColor: 'rgba(255,255,255,0.7) rgba(255,255,255,0.1)',
+                '&': {
+                  scrollbarWidth: 'none',
+                },
+                '&:hover': {
+                  scrollbarWidth: 'thin',
+                },
               })}
             >
               <Typography
                 variant='h4'
                 style={{
-                  textAlign: 'center', width: '100%', fontFamily: 'Tinos',
+                  textAlign: 'center',
+                  width: '100%',
+                  fontFamily: 'Tinos',
                 }}
               >
                 Highlights
@@ -490,7 +580,6 @@ export default function Experience() {
                   whiteSpace: 'pre-line',
                   width: '100%',
                   fontFamily: 'Tinos',
-
                 }}
               >
                 {typedText}

@@ -84,9 +84,10 @@ export default function Hero() {
             variant="h1"
             sx={{
               display: 'flex',
-              flexDirection: { xs: 'column', sm: 'row' },
+              flexDirection: { xs: 'row', sm: 'row' },
               alignItems: 'center',
-              fontSize: 'clamp(3rem, 10vw, 3.5rem)',
+              fontSize: { xs: '2.5rem', sm: 'clamp(3rem, 10vw, 3.5rem)' },
+              whiteSpace: { xs: 'nowrap', sm: 'normal' } 
             }}
           >
              <Typography
@@ -107,7 +108,7 @@ export default function Hero() {
           </Typography>
         </Stack>
         <div style={{display:'flex', flexDirection:"row", gap:20}}>
-        <img src={pp} alt='hello' style={{ height:400, borderRadius:10}}/>
+        {window.innerWidth>600 &&<img src={pp} alt='hello' style={{ height:400, borderRadius:10}}/>}
         <TypingAnimation
         text={aboutMe}
         speed={25}
