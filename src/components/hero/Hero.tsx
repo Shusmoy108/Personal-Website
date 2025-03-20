@@ -1,61 +1,48 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import InputLabel from '@mui/material/InputLabel';
-import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
-import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import pp from './pp.jpg'
-import { visuallyHidden } from '@mui/utils';
-import { styled } from '@mui/material/styles';
-import { useEffect, useState } from 'react';
+import pp from './pp.jpg';
+import { useEffect, useRef, useState } from 'react';
 import { aboutMe } from '../../data/Info';
 
-const TypingAnimation = ({ text, speed = 100, pause = 1000 }:any) => {
-    const [displayedText, setDisplayedText] = useState("");
-    const [currentIndex, setCurrentIndex] = useState(0);
-  
-    useEffect(() => {
-      if (currentIndex < text.length) {
-        const typingInterval = setTimeout(() => {
-          setDisplayedText((prev) => prev + text[currentIndex]);
-          setCurrentIndex((prevIndex) => prevIndex + 1);
-        }, speed);
-  
-        return () => clearTimeout(typingInterval);
-      } else {
-        // Pause and reset for continuous typing
-        const resetTimeout = setTimeout(() => {
-          setDisplayedText("");
-          setCurrentIndex(0);
-        }, pause);
-  
-        return () => clearTimeout(resetTimeout);
-      }
-    }, [currentIndex, text, speed, pause]);
-  
-    return (
-      <Typography sx={{
-        textAlign: 'justify',
-        color: 'text.secondary',
-        fontFamily:'Comic Neue',
-        width: { sm: '100%', md: '80%' },
-      }}>
-        {displayedText}
-      </Typography>
-    );
-  };
-
 export default function Hero() {
+  const [typedText, setTypedText] = useState('');
+  const [isTyping, setIsTyping] = useState(true);
+  const textContainerRef = useRef<HTMLDivElement>(null);
+  const typingSpeed = 5; // Changed from 10 to 5 milliseconds per character for faster typing
+
+  // Effect for typing animation
+  useEffect(() => {
+    if (!isTyping) return;
+
+    const textToType = aboutMe || '';
+
+    if (typedText.length < textToType.length) {
+      const timeout = setTimeout(() => {
+        setTypedText(textToType.substring(0, typedText.length + 1));
+      }, typingSpeed);
+
+      return () => clearTimeout(timeout);
+    } else {
+      setIsTyping(false);
+    }
+  }, [typedText, isTyping]);
+
+  // Effect to scroll to bottom as text is typed
+  useEffect(() => {
+    if (textContainerRef.current) {
+      textContainerRef.current.scrollTop = textContainerRef.current.scrollHeight;
+    }
+  }, [typedText]);
+
   return (
     <Box
       id="hero"
       sx={(theme) => ({
         width: '100%',
         backgroundRepeat: 'no-repeat',
-
         backgroundImage:
           'radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 90%), transparent)',
         ...theme.applyStyles('dark', {
@@ -72,8 +59,7 @@ export default function Hero() {
           pt: { xs: 14, sm: 20 },
           pb: { xs: 8, sm: 12 },
         }}
-        style={{paddingTop:110}}
-
+        style={{ paddingTop: 110 }}
       >
         <Stack
           spacing={2}
@@ -84,13 +70,13 @@ export default function Hero() {
             variant="h1"
             sx={{
               display: 'flex',
-              flexDirection: { xs: 'row', sm: 'row' },
+              flexDirection: 'row',
               alignItems: 'center',
               fontSize: { xs: '2.5rem', sm: 'clamp(3rem, 10vw, 3.5rem)' },
-              whiteSpace: { xs: 'nowrap', sm: 'normal' } 
+              whiteSpace: { xs: 'nowrap', sm: 'normal' }
             }}
           >
-             <Typography
+            <Typography
               component="span"
               variant="h1"
               sx={(theme) => ({
@@ -104,20 +90,62 @@ export default function Hero() {
               Hi!&nbsp;
             </Typography>
             There
-           
           </Typography>
         </Stack>
-        <div style={{display:'flex', flexDirection:"row", gap:20}}>
-        {window.innerWidth>600 &&<img src={pp} alt='hello' style={{ height:400, borderRadius:10}}/>}
-        <TypingAnimation
-        text={aboutMe}
-        speed={25}
-        pause={4000}
-      />
 
-        </div>
-        
-        {/* <StyledBox id="image" /> */}
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            gap: 3,
+            width: '100%',
+            mt: 4
+          }}
+        >
+          {/* Image - hidden on mobile */}
+          <Box
+            sx={{
+              display: { xs: 'none', sm: 'block' }
+            }}
+          >
+            <img
+              src={pp}
+              alt='Profile'
+              style={{
+                height: 400,
+                borderRadius: 10,
+                maxWidth: '100%',
+                objectFit: 'cover'
+              }}
+            />
+          </Box>
+
+          {/* Typing animation text */}
+          <Box
+            ref={textContainerRef}
+            sx={{
+              width: '100%',
+              overflow: 'auto',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              justifyContent: 'flex-start',
+            }}
+          >
+            <Typography
+              variant="body1"
+              sx={{
+                textAlign: 'justify',
+                color: 'text.secondary',
+                fontFamily: 'Comic Neue',
+                width: { xs: '100%', sm: '100%', md: '100%' },
+                whiteSpace: 'pre-line'
+              }}
+            >
+              {typedText}
+            </Typography>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );
