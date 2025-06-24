@@ -9,7 +9,9 @@ import { styled } from '@mui/material/styles';
 import { useEffect, useRef, useState } from 'react';
 import { research, researchInfo } from '../../data/Research';
 
-const items = research;
+
+
+const items =research;
 interface ChipProps {
   selected?: boolean;
 }
@@ -120,36 +122,6 @@ export function MobileLayout({
             flexDirection: 'column',
             alignItems: 'flex-start',
             justifyContent: 'flex-start',
-            // Custom scrollbar styling
-            '&::-webkit-scrollbar': {
-              height: '4px',
-              display: 'none',
-            },
-            '&:hover::-webkit-scrollbar': {
-              display: 'block',
-            },
-            '&::-webkit-scrollbar-track': {
-              backgroundColor: 'rgba(255,255,255,0.1)',
-              borderRadius: '10px',
-            },
-            '&::-webkit-scrollbar-thumb': {
-              backgroundColor: 'rgba(255,255,255,0.7)',
-              borderRadius: '10px',
-              '&:hover': {
-                backgroundColor: 'rgba(255,255,255,0.9)',
-              },
-            },
-            '&::-webkit-scrollbar-button': {
-              display: 'none',
-            },
-            scrollbarWidth: 'thin',
-            scrollbarColor: 'rgba(255,255,255,0.7) rgba(255,255,255,0.1)',
-            '&': {
-              scrollbarWidth: 'none',
-            },
-            '&:hover': {
-              scrollbarWidth: 'thin',
-            },
           })}
         >
           <Typography
@@ -157,8 +129,7 @@ export function MobileLayout({
             sx={{
               textAlign: 'justify',
               whiteSpace: 'pre-line',
-              width: '100%',
-              fontFamily: 'Tinos',
+              width: '100%', fontFamily: 'Tinos',
             }}
           >
             {mobileTypedText}
@@ -167,18 +138,11 @@ export function MobileLayout({
         <Box sx={{ px: 2, pb: 2 }}>
           <Typography
             gutterBottom
-            sx={{
-              color: 'text.primary',
-              fontWeight: 'medium',
-              fontFamily: 'Tinos',
-            }}
+            sx={{ color: 'text.primary', fontWeight: 'medium', fontFamily: 'Tinos', }}
           >
             {selectedFeature.title}
           </Typography>
-          <Typography
-            variant='body2'
-            sx={{ color: 'text.secondary', fontFamily: 'Tinos', mb: 1.5 }}
-          >
+          <Typography variant='body2' sx={{ color: 'text.secondary', fontFamily: 'Tinos', mb: 1.5 }}>
             {selectedFeature.description}
           </Typography>
         </Box>
@@ -258,20 +222,16 @@ export default function Research() {
           component='h2'
           variant='h4'
           gutterBottom
-          sx={{ color: 'text.primary', fontFamily: 'Tinos' }}
+          sx={{ color: 'text.primary' ,fontFamily: 'Tinos', }}
         >
           Research Interest
         </Typography>
         <Typography
           variant='body1'
-          style={{ textAlign: 'justify' }}
-          sx={{
-            color: 'text.secondary',
-            fontFamily: 'Tinos',
-            mb: { xs: 2, sm: 4 },
-          }}
+          style={{textAlign:'justify'}}
+          sx={{ color: 'text.secondary',  fontFamily: 'Tinos',mb: { xs: 2, sm: 4 } }}
         >
-          {researchInfo}
+         {researchInfo}
         </Typography>
       </Box>
       <Box
@@ -331,12 +291,8 @@ export default function Research() {
                 >
                   {icon}
 
-                  <Typography variant='h6' sx={{ fontFamily: 'Tinos' }}>
-                    {title}
-                  </Typography>
-                  <Typography variant='body2' sx={{ fontFamily: 'Tinos' }}>
-                    {description}
-                  </Typography>
+                  <Typography variant='h6' sx={{ fontFamily: 'Tinos',}}>{title}</Typography>
+                  <Typography variant='body2' sx={{ fontFamily: 'Tinos',}}>{description}</Typography>
                 </Box>
               </Box>
             ))}
@@ -374,36 +330,6 @@ export default function Research() {
                 flexDirection: 'column',
                 alignItems: 'flex-start',
                 justifyContent: 'flex-start',
-                // Custom scrollbar styling
-                '&::-webkit-scrollbar': {
-                  height: '4px',
-                  display: 'none',
-                },
-                '&:hover::-webkit-scrollbar': {
-                  display: 'block',
-                },
-                '&::-webkit-scrollbar-track': {
-                  backgroundColor: 'rgba(255,255,255,0.1)',
-                  borderRadius: '10px',
-                },
-                '&::-webkit-scrollbar-thumb': {
-                  backgroundColor: 'rgba(255,255,255,0.7)',
-                  borderRadius: '10px',
-                  '&:hover': {
-                    backgroundColor: 'rgba(255,255,255,0.9)',
-                  },
-                },
-                '&::-webkit-scrollbar-button': {
-                  display: 'none',
-                },
-                scrollbarWidth: 'thin',
-                scrollbarColor: 'rgba(255,255,255,0.7) rgba(255,255,255,0.1)',
-                '&': {
-                  scrollbarWidth: 'none',
-                },
-                '&:hover': {
-                  scrollbarWidth: 'thin',
-                },
               })}
             >
               <Typography
@@ -411,8 +337,7 @@ export default function Research() {
                 sx={{
                   textAlign: 'justify',
                   whiteSpace: 'pre-line',
-                  width: '100%',
-                  fontFamily: 'Tinos',
+                  width: '100%', fontFamily: 'Tinos',
                 }}
               >
                 {typedText}
